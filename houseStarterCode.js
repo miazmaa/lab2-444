@@ -6,11 +6,34 @@ var gl;
 
 
 var points = [
+    //House Body
+    vec4(-3.0, 0.0, 0.0, 1.0),
+    vec4(3.0, 0.0, 0.0, 1.0),
+    vec4(3.0, 2, 0.0, 1.0),
+    vec4(-3.0, 2, 0.0, 1.0),
 
+    //Roof
+  
+    //Windows
+   
+    //Door
+    
+    //Diamond
+    
 ];
 
 var colors = [
-
+    //House Body
+    vec4(0.0, 0.0, 1.0, 1.0),
+    vec4(0.0, 0.0, 1.0, 1.0),
+    vec4(0.0, 0.0, 1.0, 1.0),
+    vec4(0.0, 0.0, 1.0, 1.0),
+    //Windows
+   
+    //Door
+    
+    //Diamond
+    
 ];
 
 var numVertices  = points.length;
