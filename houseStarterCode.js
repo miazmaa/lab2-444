@@ -16,7 +16,10 @@ var points = [
     vec4(0.0, 3.0, 0.0, 1.0),
     vec4(3.0, 2.0, 0.0, 1.0),
     //Windows
-   
+    vec4(-2.5, 1.5, 0.1, 1.0),
+    vec4(-1.5, 1.5, 0.1, 1.0),
+    vec4(-1.5, 0.5, 0.1, 1.0),
+    vec4(-2.5, 0.5, 0.1, 1.0),
     //Door
     
     //Diamond
@@ -35,7 +38,10 @@ var colors = [
     vec4(1.0, 0.0, 1.0, 1.0),
 
     //Windows
-   
+    vec4(1.0,1.0,1.0,1.0),
+    vec4(1.0,1.0,1.0,1.0),
+    vec4(1.0,1.0,1.0,1.0),
+    vec4(1.0,1.0,1.0,1.0),
     //Door
     
     //Diamond
@@ -118,7 +124,6 @@ function drawHouse(){
 
 function drawWindows(){
     gl.drawArrays(gl.TRIANGLE_FAN, 7, 4);
-    gl.drawArrays(gl.TRIANGLE_FAN, 11, 4);
 }
 
 function drawEntrance(){
