@@ -152,6 +152,13 @@ function render()
     modelViewMatrix = mult(lookAt(eye, at, up), translate(3.0, 0.0, 0.0));
     gl.uniformMatrix4fv(modelViewMatrixLoc, false, flatten(modelViewMatrix));
     drawWindows();
-
+    modelViewMatrix = mult(lookAt(eye, at, up),translate(-0.5, -0.5, 0.0));
+    modelViewMatrix = mult(modelViewMatrix,scalem(0.75, 0.75, 1.0));
+    gl.uniformMatrix4fv(modelViewMatrixLoc, false,flatten(modelViewMatrix));
+    drawWindows();
+    modelViewMatrix = mult(lookAt(eye, at, up),translate(3, -0.5, 0.0));
+    modelViewMatrix = mult(modelViewMatrix,scalem(0.75, 0.75, 1.0));
+    gl.uniformMatrix4fv(modelViewMatrixLoc, false,flatten(modelViewMatrix));
+    drawWindows();
     window.requestAnimationFrame(render);
 }
