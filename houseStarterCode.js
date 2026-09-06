@@ -26,7 +26,10 @@ var points = [
     vec4(1.0, 1, 0.9, 1.0),
     vec4(-1.0, 1, 0.9, 1.0),
     //Diamond
-    
+    vec4(0.0, 2.0, 0.9, 1.0),
+    vec4(0.5, 1.5, 0.9, 1.0),
+    vec4(0.0, 1, 0.9, 1.0),
+    vec4(-0.5, 1.5, 0.9, 1.0)
 ];
 
 var colors = [
@@ -40,7 +43,7 @@ var colors = [
     vec4(1.0, 0.0, 1.0, 1.0),
     vec4(1.0, 0.0, 1.0, 1.0),
 
-    //Windows
+    //Window
     vec4(1.0,1.0,1.0,1.0),
     vec4(1.0,1.0,1.0,1.0),
     vec4(1.0,1.0,1.0,1.0),
@@ -51,6 +54,10 @@ var colors = [
     vec4(0.55, 0.27, 0.07, 1.0),
     vec4(0.55, 0.27, 0.07, 1.0),
     //Diamond
+    vec4(1.0, 1.0, 0.0, 1.0),
+    vec4(1.0, 1.0, 0.0, 1.0),
+    vec4(1.0, 1.0, 0.0, 1.0),
+    vec4(0.0, 1.0, 0.0, 1.0)
     
 ];
 
@@ -137,7 +144,7 @@ function drawEntrance(){
 }
 
 function drawDiamond(){
-    gl.drawArrays(gl.TRIANGLE_FAN, 11, 4);
+    gl.drawArrays(gl.TRIANGLE_FAN, 15, 4);
 }
 
 function render()
