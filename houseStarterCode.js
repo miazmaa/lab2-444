@@ -7,24 +7,24 @@ var gl;
 
 var points = [
     //House Body
-    vec4(-3.0, 0.0, 0.0, 1.0),
-    vec4(3.0, 0.0, 0.0, 1.0),
-    vec4(3.0, 2, 0.0, 1.0),
-    vec4(-3.0, 2, 0.0, 1.0),
+    vec4(-2.5, 0.0, 1.0, 1.0),
+    vec4(2.5, 0.0, 1.0, 1.0),
+    vec4(2.5, 2.0, 1.0, 1.0),
+    vec4(-2.5, 2.0, 1.0, 1.0),
     //Roof
-    vec4(-3.0, 2.0, 0.0, 1.0),
-    vec4(0.0, 3.0, 0.0, 1.0),
-    vec4(3.0, 2.0, 0.0, 1.0),
-    //Windows
-    vec4(-1.5, 1.5, 0.0, 1.0),
-    vec4(-1.5, 1.5, 0.0, 1.0),
-    vec4(-1.5, 0.5, 0.0, 1.0),
-    vec4(-2.5, 0.5, 0.0, 1.0),
+    vec4(-3.0, 2.0, 1.0, 1.0),
+    vec4(0.0, 3.0, 1.0, 1.0),
+    vec4(3.0, 2.0, 1.0, 1.0),
+    //Window
+    vec4(-2, 1.7, 0.9, 1.0),
+    vec4(-1, 1.7, 0.9, 1.0),
+    vec4(-1, 1.1, 0.9, 1.0),
+    vec4(-2, 1.1, 0.9, 1.0),
     //Door
-    vec4(-1, 0.0, 0.1, 1.0),
-    vec4(1.0, 0.0, 0.1, 1.0),
-    vec4(1.0, 1, 0.1, 1.0),
-    vec4(-1.0, 1, 0.1, 1.0),
+    vec4(-1, 0.0, 0.9, 1.0),
+    vec4(1.0, 0.0, 0.9, 1.0),
+    vec4(1.0, 1, 0.9, 1.0),
+    vec4(-1.0, 1, 0.9, 1.0),
     //Diamond
     
 ];
@@ -116,7 +116,7 @@ window.onload = function init()
     projectionMatrixLoc = gl.getUniformLocation( program, "projectionMatrix" );
 
 	//Set up Ortho Projections
-    projectionMatrix = ortho(-4, 4, 0, 4, 3, -3);
+    projectionMatrix = ortho(-4, 4, 0, 4, 1, -1);
     gl.uniformMatrix4fv( projectionMatrixLoc, false, flatten(projectionMatrix) );
 
 
