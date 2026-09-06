@@ -16,15 +16,15 @@ var points = [
     vec4(0.0, 3.0, 0.0, 1.0),
     vec4(3.0, 2.0, 0.0, 1.0),
     //Windows
-    vec4(-2.5, 1.5, 0.1, 1.0),
-    vec4(-1.5, 1.5, 0.1, 1.0),
-    vec4(-1.5, 0.5, 0.1, 1.0),
-    vec4(-2.5, 0.5, 0.1, 1.0),
+    vec4(-1.5, 1.5, 0.0, 1.0),
+    vec4(-1.5, 1.5, 0.0, 1.0),
+    vec4(-1.5, 0.5, 0.0, 1.0),
+    vec4(-2.5, 0.5, 0.0, 1.0),
     //Door
-    vec4(-1, 0.0, 0.5, 1.0),
-    vec4(1.0, 0.0, 0.5, 1.0),
-    vec4(1.0, 1, 0.5, 1.0),
-    vec4(-1.0, 1, 0.5, 1.0),
+    vec4(-1, 0.0, 0.1, 1.0),
+    vec4(1.0, 0.0, 0.1, 1.0),
+    vec4(1.0, 1, 0.1, 1.0),
+    vec4(-1.0, 1, 0.1, 1.0),
     //Diamond
     
 ];
@@ -133,11 +133,11 @@ function drawWindows(){
 }
 
 function drawEntrance(){
-    gl.drawArrays(gl.TRIANGLE_FAN, 15, 4);
+    gl.drawArrays(gl.TRIANGLE_FAN, 11, 4);
 }
 
 function drawDiamond(){
-    gl.drawArrays(gl.TRIANGLE_FAN, 19, 4);
+    gl.drawArrays(gl.TRIANGLE_FAN, 11, 4);
 }
 
 function render()
