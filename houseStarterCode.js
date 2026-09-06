@@ -149,6 +149,9 @@ function render()
     drawWindows();
     drawEntrance();
     drawDiamond();
+    modelViewMatrix = mult(lookAt(eye, at, up), translate(3.0, 0.0, 0.0));
+    gl.uniformMatrix4fv(modelViewMatrixLoc, false, flatten(modelViewMatrix));
+    drawWindows();
 
     window.requestAnimationFrame(render);
 }
