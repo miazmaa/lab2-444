@@ -73,6 +73,7 @@ var eye, at, up;
 var number=1;
 
 var theta=0;
+theta = (theta + 2) % 360;
 var theta2=0;
 
 var down=false;
@@ -160,7 +161,16 @@ function render()
     modelViewMatrix = lookAt(eye, at, up);
     gl.uniformMatrix4fv( modelViewMatrixLoc, false, flatten(modelViewMatrix) );
     drawWindows();
+   modelViewMatrix = mult(lookAt(eye, at, up), translate(0.0, 1.5, 0.0));
+    modelViewMatrix = mult(modelViewMatrix, rotate(theta, 0, 0, 1));
+    modelViewMatrix = mult(modelViewMatrix, translate(0.0, -1.5, 0.0));
+    gl.uniformMatrix4fv( modelViewMatrixLoc, false, flatten(modelViewMatrix) );
     drawDiamond();
+
+
+
+    modelViewMatrix = lookAt(eye, at, up);
+    gl.uniformMatrix4fv( modelViewMatrixLoc, false, flatten(modelViewMatrix) );
     modelViewMatrix = mult(lookAt(eye, at, up), translate(3.0, 0.0, 0.0));
     gl.uniformMatrix4fv(modelViewMatrixLoc, false, flatten(modelViewMatrix));
     drawWindows();
@@ -184,5 +194,6 @@ function render()
             down = true;
         }
     }
+    theta += 1.0;
     window.requestAnimationFrame(render);
 }
