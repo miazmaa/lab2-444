@@ -62,7 +62,8 @@ var colors = [
 ];
 
 var numVertices  = points.length;
-
+var down = true;
+var ty = 0;
 // Shader transformation matrices
 var modelViewMatrix, projectionMatrix;
 var modelViewMatrixLoc, projectionMatrixLoc;
@@ -74,7 +75,7 @@ var number=1;
 var theta=0;
 var theta2=0;
 
-var down=true;
+var down=false;
 var ty=0;
 
 window.onload = function init()
@@ -153,8 +154,12 @@ function render()
     modelViewMatrix = lookAt(eye, at, up);
     gl.uniformMatrix4fv( modelViewMatrixLoc, false, flatten(modelViewMatrix) );
     drawHouse();
-    drawWindows();
+    modelViewMatrix = mult(lookAt(eye, at, up), translate(0.0, ty, 0.0));
+    gl.uniformMatrix4fv( modelViewMatrixLoc, false, flatten(modelViewMatrix) );
     drawEntrance();
+    modelViewMatrix = lookAt(eye, at, up);
+    gl.uniformMatrix4fv( modelViewMatrixLoc, false, flatten(modelViewMatrix) );
+    drawWindows();
     drawDiamond();
     modelViewMatrix = mult(lookAt(eye, at, up), translate(3.0, 0.0, 0.0));
     gl.uniformMatrix4fv(modelViewMatrixLoc, false, flatten(modelViewMatrix));
@@ -167,5 +172,17 @@ function render()
     modelViewMatrix = mult(modelViewMatrix,scalem(0.75, 0.75, 1.0));
     gl.uniformMatrix4fv(modelViewMatrixLoc, false,flatten(modelViewMatrix));
     drawWindows();
+    if ( down == true){
+        ty = ty -.01;
+        if (ty <= -1.1 ){
+            down = false;
+        }
+    }
+    if ( down == false){
+        ty = ty +.01;
+        if (ty >=0.0 ){
+            down = true;
+        }
+    }
     window.requestAnimationFrame(render);
 }
