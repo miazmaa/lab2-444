@@ -1,3 +1,4 @@
+//Anne Canino
 "use strict";
 
 var canvas;
